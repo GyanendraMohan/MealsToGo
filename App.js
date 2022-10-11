@@ -14,7 +14,6 @@ import {
 import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 import { SafeArea } from "./src/components/utility/safe-area.component";
 import { Ionicons } from "@expo/vector-icons";
-// const isAndroid = Platform.OS === "android";
 
 const Tab = createBottomTabNavigator();
 
