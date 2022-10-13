@@ -16,6 +16,7 @@ import { SafeArea } from "./src/components/utility/safe-area.component";
 import { Ionicons } from "@expo/vector-icons";
 import { RestaurantsContextProvider } from "./src/services/restaurants/restaurants.context";
 import { LocationContextProvider } from "./src/services/location/location.context";
+
 const Tab = createBottomTabNavigator();
 
 const TAB_ICON = {
