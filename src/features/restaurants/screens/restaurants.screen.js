@@ -5,7 +5,10 @@ import { RestaurantInfoCard } from "../components/restaurants-info-card.componen
 import styled from "styled-components/native";
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { SafeArea } from "../../../components/utility/safe-area.component";
+
 import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
+import { FavouritesContext } from "../../../services/favourites/favourites.context";
+
 import { ActivityIndicator, MD2Colors } from "react-native-paper";
 import { Search } from "../components/search.component";
 
@@ -31,7 +34,8 @@ const LoadingContainer = styled.View`
 
 export const RestaurantsScreen = ({ navigation }) => {
   const { isLoading, restaurants } = useContext(RestaurantsContext);
-  // console.log(navigation);
+  const { favourites } = useContext(FavouritesContext);
+  console.log(favourites);
   return (
     <SafeArea>
       {isLoading && (
