@@ -19,7 +19,7 @@ export const MapScreen = () => {
   const [latDelta, setLatDelta] = useState(0);
   const { viewport, lat, lng } = location;
 
-  console.log(viewport.northeast);
+  // console.log(viewport.northeast);
 
   useEffect(() => {
     const northeastLat = viewport.northeast.lat;
@@ -39,7 +39,16 @@ export const MapScreen = () => {
         }}
       >
         {restaurants.map((restaurant) => {
-          return null;
+          return (
+            <MapView.Marker
+              key={restaurant.name}
+              title={restaurant.name}
+              coordinate={{
+                latitude: restaurant.geometry.location.lat,
+                longitude: restaurant.geometry.location.lng,
+              }}
+            ></MapView.Marker>
+          );
         })}
       </Map>
     </>
