@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import { ThemeProvider } from "styled-components/native";
 import { theme } from "./src/infrastructure/theme";
+import * as firebase from "firebase";
+// import { initializeApp } from "firebase/app";
 
 import {
   useFonts as useOswald,
@@ -16,7 +18,37 @@ import { RestaurantsContextProvider } from "./src/services/restaurants/restauran
 import { LocationContextProvider } from "./src/services/location/location.context";
 import { FavouritesContextProvider } from "./src/services/favourites/favourites.context";
 
+const firebaseConfig = {
+  apiKey: "AIzaSyD3PcV4MWkZIwV39GsxVmoOXB9Ytyg4WIQ",
+  authDomain: "meals-to-go-app-478c4.firebaseapp.com",
+  projectId: "meals-to-go-app-478c4",
+  storageBucket: "meals-to-go-app-478c4.appspot.com",
+  messagingSenderId: "796676071303",
+  appId: "1:796676071303:web:93d3655f286a175043bd22",
+  // measurementId: "G-JR94564XTW",
+};
+
+if (firebase.apps.length === 0) {
+  firebase.initializeApp(firebaseConfig);
+}
+
 export default function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      firebase
+        .auth()
+        .signInWithEmailAndPassword("email@gyan.io", "test123")
+        .then((user) => {
+          setIsAuthenticated(true);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    }, 2000);
+  }, []);
+
   const [oswaldLoaded] = useOswald({
     Oswald_400Regular,
   });
