@@ -58,7 +58,7 @@ export const RegisterScreen = ({ navigation }) => {
           </ErrorContainer>
         )}
         <Spacer size="large">
-          {isLoading ? (
+          {!isLoading ? (
             <AuthButton
               icon="email"
               mode="contained"
