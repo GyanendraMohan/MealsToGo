@@ -29,7 +29,7 @@ const firebaseConfig = {
   // measurementId: "G-JR94564XTW",
 };
 
-if (firebase.apps.length === 0) {
+if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
 
