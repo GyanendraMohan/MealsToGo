@@ -10,6 +10,7 @@ const SettingsItem = styled(List.Item)`
   padding: ${(props) => props.theme.space[3]};
 `;
 const AvatarContainer = styled.View`
+  padding-top: ${(props) => props.theme.space[2]};
   align-items: center;
 `;
 

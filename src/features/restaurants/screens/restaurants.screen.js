@@ -12,17 +12,12 @@ import { FavouritesContext } from "../../../services/favourites/favourites.conte
 import { ActivityIndicator, MD2Colors } from "react-native-paper";
 import { Search } from "../components/search.component";
 import { FavouritesBar } from "../../../components/favourites/favourites-bar.component";
+import { RestaurantList } from "../components/restaurant-list.styles";
 
 // const RestaurantListContainer = styled.View`
 //   flex: 1;
 //   padding: ${(props) => props.theme.space[3]};
 // `;
-
-const RestaurantList = styled(FlatList).attrs({
-  contentContainerStyle: {
-    padding: 16,
-  },
-})``;
 
 const Loading = styled(ActivityIndicator)`
   margin-left: -25px;
